@@ -2,6 +2,12 @@ const Settings = require('./settings.json');
 
 module.exports = {
 	get: function(bot, message, args, embed) {
+		// Get plugin list
+		let pluginList = [];
+		for (var plugin of bot.plugins.values()) {
+			pluginList.push(plugin.info.name);
+		}
+		pluginList = pluginList.join('\n\u2000\u2022\u0020');
 		// Module-specific help
 		if (bot.plugins.has(args[0])) {
 			// Module found

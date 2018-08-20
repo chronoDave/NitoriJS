@@ -16,6 +16,7 @@ const prefix = Settings.prefix;
 // ------------- Components ------------- //
 const Presence = require('./components/presence.js');
 const Help = require('./components/help.js');
+const Admin = require('./components/admin.js');
 
 // ------------- Plugins ------------- //
 fs.readdir(dirPlugins, (e, files) => {
@@ -34,12 +35,6 @@ fs.readdir(dirPlugins, (e, files) => {
 	});
 });
 
-let ls = [];
-for (var plugin of Nitori.plugins.values()) {
-	ls.push(plugin.info.name);
-}
-const pluginList = ls.join('\n\u2000\u2022\u0020');
-
 // ------------- Discord Init ------------- //
 Nitori.on('ready', async () => {
 	// Generate invite link
@@ -49,7 +44,9 @@ Nitori.on('ready', async () => {
 	} catch(e) {
 		console.log("\u001b[31m", e.stack, "\x1b[0m");
 	}
+	// Components
 	Presence.randomPresence(Nitori);
+	Admin.create();
 	console.log('\x1b[32m%s\x1b[0m', 'Discord successfully initialized, Nitori ready for duty!');
 });
 
@@ -77,12 +74,30 @@ Nitori.on('message', async message => {
 	}
 	// Listen to commands from here
 	if(!command.startsWith(prefix)) return; // Ignore non-commands
-	if(command === `${prefix}help`) {
-		let embed = new Discord.RichEmbed();
-		Help.get(Nitori, message, args, embed);
+	let noPrefix = command.slice(prefix.length);
+	switch (noPrefix) {
+		case 'help':
+			let embed = new Discord.RichEmbed();
+			Help.get(Nitori, message, args, embed);
+			break;
+		case 'admin':
+			switch (args[0]) {
+				case 'add':
+					let user = message.mentions.users.array();
+					// Add proper error handling
+					if (user.length !== 1 || message.guild == "null") return message.reply(`I'm sorry, but I can only add one user at a time`);
+					Admin.add(user[0], message.guild.id, message);
+					break;
+				case 'get':
+					Admin.get(message.guild.id).then(response => {message.reply(response)});
+					break;
+				default:
+					return message.reply('`' + args[0] + '`' + ` is not a valid command`);
+			}
+			break;
 	}
-	let plugin = Nitori.plugins.get(command.slice(prefix.length));
-	if(plugin) plugin.run(Nitori, message, args); // Valid plugin? Run it.
+	let plugin = Nitori.plugins.get(noPrefix);
+	if (plugin) plugin.run(Nitori, message, args); // Valid plugin? Run it.
 });
 
 // ------------- Discord Login ------------- //
