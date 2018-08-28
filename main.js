@@ -29,9 +29,14 @@ fs.readdir(dirPlugins, (e, files) => {
 	console.log(`Found ${plugins.length} plugins, trying to load them now...`);
 	// Load plugins
 	plugins.forEach((f, i) => {
-		let plugin = require(`${dirPlugins}${f}`); // Load files, store in array
-		console.log(` - [${i+1}] ${f} loaded!`);
-		Nitori.plugins.set(plugin.info.name, plugin);
+		try {
+			let plugin = require(`${dirPlugins}${f}`); // Load files, store in array
+			console.log(` - [${i+1}] ${f} loaded!`);
+			Nitori.plugins.set(plugin.info.name, plugin);
+		}	
+		catch (e) {
+			console.log(plugins[i] + " - " + e.stack);
+		}
 	});
 });
 
