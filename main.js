@@ -9,14 +9,16 @@ const Nitori = new Discord.Client({disableEveryone: true});
 Nitori.plugins = new Discord.Collection();
 
 const NitoriClever = new Cleverbot;
-NitoriClever.configure({botapi: "CC8k2Ti6DbbtFUm68Wpurk3JMXw"});
+NitoriClever.configure({botapi: Settings.tokenClever});
 
 var prefix = Settings.prefix; // Can be changed by admin component
+var truth = false; // Used for Aletheia
 
 // ------------- Components ------------- //
 const Presence = require('./components/presence.js');
 const Help = require('./components/help.js');
 const Admin = require('./components/admin.js');
+const Aletheia = require('./components/aletheia.js');
 
 // ------------- Plugins ------------- //
 fs.readdir(dirPlugins, (e, files) => {
@@ -73,7 +75,11 @@ Nitori.on('message', async message => {
 		// Cleverbot
 		message.channel.startTyping();
 		NitoriClever.write(args.join(' '), function(response) {
-			message.reply(response.output);
+			if (truth) {
+				message.reply(Aletheia.send(response.output));
+			} else {
+				message.reply(response.output);
+			}
 			message.channel.stopTyping();
 		});
 	}
@@ -118,6 +124,15 @@ Nitori.on('message', async message => {
 							return message.reply(Admin.server(args[1], args[2], Nitori));
 						case 'self':
 							return message.reply(Admin.self(args[1], args[2], args.slice(3, args.length).join(" "), Nitori));
+						case 'truth':
+							switch (args[1]) {
+								case 'enable':
+									return message.reply(Aletheia.send(`memoRIEs ANd posSiBILiTiES are EVER moRE hiDEOus Than reALITieS`));
+								case 'disable':
+									return message.reply(Aletheia.send(`the oldESt And sTROngEsT EMOTION of mANkINd iS fear, ANd the olDesT And StRONGEsT KINd oF FEaR IS fEaR oF tHe unkNown. `));
+								case 'default':
+									return message.reply('`' + args[1] + '`' + ` is not a valid argument`)
+							}
 						default:
 							return message.reply('`' + args[0] + '`' + ` is not a valid command`);
 					}
