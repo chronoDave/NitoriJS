@@ -14,11 +14,11 @@ Before running NitoriJS, create a settings.json file inside the components folde
 ```
 // settings.json
 {
-	"token": '', // Your Discord bot token
-	"tokenClever": '', // Your CleverBot token (optional)
-	"prefix": '', // Prefix for your commands
-	"color": '', // Color used for embeds (Nitori's default color)
-	"owner": '', // ID of the owner of the bot, usually yourself
+	"token": "", // Your Discord bot token
+	"tokenClever": "", // Your CleverBot token (optional)
+	"prefix": "", // Prefix for your commands
+	"color": "", // Color used for embeds (Nitori's default color)
+	"owner": "", // ID of the owner of the bot, usually yourself
 }
 ```
 After that, simply run the bot
@@ -26,7 +26,7 @@ After that, simply run the bot
 node main.js
 ```
 ## Components / plugins
-NitoriJS works on a component / plugin system. Components are neccesary and cannot be removed, but can be added, whilst plugins can both be added and removed.
+NitoriJS works on a component / plugin system. Components are necessary and cannot be removed, but can be added, whilst plugins can both be added and removed.
 #### Adding plugins
 For NitoriJS to detect plugins, all plugins must have a main .js file located in the plugins folder.
 #### Creating plugins
@@ -34,14 +34,15 @@ For plugins, use the following template
 ```
 // Metadata (gets used by the help component)
 module.exports.info = {
-	name: '', // Name of plugin
-	description: '', // Small description of what it does
-	args: '', // Arguments it takes
-	examples: '', // Some examples
-	list: '' // A full list of all arguments
+	name: "", // Name of plugin
+	description: "", // Small description of what it does
+	args: "", // Arguments it takes
+	examples: "", // Some examples
+	list: "" // A full list of all arguments
 };
 // Event listener
-module.exports.run = async (bot, message, args) => {
+// bot is the bot object, message is the message object, args are the arguments and Aletheia is the text modifier.
+module.exports.run = async (bot, message, args, Aletheia) => {
     // Code
 }
 ```
