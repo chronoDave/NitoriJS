@@ -4,6 +4,8 @@ An open-source Discord bot written in JavaScript using the discord.js library.
 NitoriJS is written in a modular fashion, so that adding extra functionality should be relatively simple.
 
 To get an overview of NitoriJS' commands and functions, type `[prefix]help [component/plugin]`, or `[prefix]help [component/plugin] list` to get a full overview.
+
+**Using the help command currently does not work for components!**
 ## Getting Started
 As NitoriJS runs on node, you'll need both node.js and npm to get started.
 ```
