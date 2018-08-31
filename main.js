@@ -73,6 +73,7 @@ Nitori.on('message', async message => {
 			+ `, if that's what you need?`
 		);
 		// Cleverbot
+		if (Settings.tokenClever == '') return; // No token? No Cleverbot
 		message.channel.startTyping();
 		NitoriClever.write(args.join(' '), function(response) {
 			if (truth) {
