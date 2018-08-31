@@ -1,6 +1,6 @@
 {
   "name": "nitorijs",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Chrono's Discord bot",
   "main": "main.js",
   "scripts": {
