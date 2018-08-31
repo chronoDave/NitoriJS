@@ -12,7 +12,6 @@ const NitoriClever = new Cleverbot;
 NitoriClever.configure({botapi: Settings.tokenClever});
 
 var prefix = Settings.prefix; // Can be changed by admin component
-var truth = false; // Used for Aletheia
 
 // ------------- Components ------------- //
 const Presence = require('./components/presence.js');
@@ -128,11 +127,9 @@ Nitori.on('message', async message => {
 						case 'truth':
 							switch (args[1]) {
 								case 'enable':
-									truth = true;
-									return message.reply(Aletheia.send(`memoRIEs ANd posSiBILiTiES are EVER moRE hiDEOus Than reALITieS`));
+									return message.reply(Aletheia.enable());
 								case 'disable':
-									truth = false;
-									return message.reply(Aletheia.send(`the oldESt And sTROngEsT EMOTION of mANkINd iS fear, ANd the olDesT And StRONGEsT KINd oF FEaR IS fEaR oF tHe unkNown. `));
+									return message.reply(Aletheia.disable());
 								case 'default':
 									return message.reply('`' + args[1] + '`' + ` is not a valid argument`)
 							}
@@ -143,7 +140,7 @@ Nitori.on('message', async message => {
 				break;
 		}
 		let plugin = Nitori.plugins.get(noPrefix);
-		if (plugin) plugin.run(Nitori, message, args); // Valid plugin? Run it.
+		if (plugin) plugin.run(Nitori, message, args, Aletheia); // Valid plugin? Run it.
 	});
 });
 
