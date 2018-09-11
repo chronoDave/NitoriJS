@@ -1,0 +1,43 @@
+// Act I
+// Sequence I: For the Glory of Brihm
+// Scene I: Shooting gallery
+
+You arrive at the shooting coliseum of the Royal Brihm Military Academy. It's morning and you're still not quite used to the sun gently touching your face. 
+
+The professor shouts something about getting your ass to your assigned location.
+
+=============================================================================================
+
+Look around:
+	Most of the spots are taken, but you see the one next to Cecil is still available.
+
+Walk:
+	As you walk towards the still vacant spot, Cecil takes notice of you. 
+	"I won't lose to you again Vyncent!" he says
+
+=============================================================================================
+
+Before you have time to respond, Professor Alia shouts "All units prepare for fire! This is one of your exams so take it seriously! If I see anyone messing around I will personally pull you from the range and kick you out!"
+
+All students start preparing their guns
+
+=============================================================================================
+
+Look around:
+	All students are preparing their guns. You should too, probably.
+
+=============================================================================================
+
+Shoot:
+	A gunshot echoes in the coliseum, the first one. You hit the target, but did not land a critical hit. 
+
+	Quickly after another shot echoes in the coliseum, and another, and not much after the coliseum turned into a battlefield.
+
+=============================================================================================
+
+Prepare:
+	A gunshot echoes in the coliseum, the first one. Cecil hit the target, but did not land a critical hit.
+
+	Not much after a second gunshot can be heard. The head of the target dummy flies off; you landed a perfect shot. 
+
+=============================================================================================

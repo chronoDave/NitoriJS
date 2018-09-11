@@ -1,0 +1,8 @@
+{
+	"aim": ["aim", "target", "position", "prepare"],
+	"look": ["look", "stare", "view", "gaze", "inspect"],
+	"shoot": ["shoot", "fire", "blast", "pull"],
+	"walk": ["walk", "run", "move", "step", "stroll", "go"],
+	"grab": ["grab", "take", "equip"],
+	"talk": ["talk"]
+}

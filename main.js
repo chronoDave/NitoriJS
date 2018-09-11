@@ -67,7 +67,7 @@ Nitori.on('message', async message => {
 	if (message.isMentioned(Nitori.user.id)) {
 		// Help
 		if (args.length === 0) return message.reply(
-			`Me? I can give you a list of my tools if you type` 
+			`Me? I can give you a list of my tools if you type ` 
 			+ '`' + `${prefix}help` + '`'
 			+ `, if that's what you need?`
 		);

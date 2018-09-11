@@ -1,0 +1,225 @@
+{
+	"bt0": {
+		"text": "Version: 0.1.0 (Beta)\nMade By: Chronocide\n\nThis is an old-school text adventure where you type to advance the game. The game features a branching story, what the game tells you to do might not be the correct action!\n\nI highly suggest playing this game in a private channel, server, or DM, as you will probably need to scroll back on some occasions\n\n**To begin, type 'enter' using the b!game prefix**"
+	},
+	"bt1": {
+		"1": {
+			"title": "Chapter I: For the glory of Brihm",
+			"text": "You are at the shooting coliseum of the Royal Brihm Military Academy. You can feel the gravel moving under your feet. It's morning and the sun is gently kissing your cheeks. It's a good day for practice.\n\nThe professor is shouting something about getting \u0022your ass in gear\u0022.",
+			"actions": {
+				"look": {
+					"default": "All your classmates have taken their spots. Your spot, the one next to Cecil's, is still empty."
+				},
+				"walk": {
+					"advance": 2
+				},
+				"default": "I'm sorry, I don't understand."
+			}
+		},
+		"2": {
+			"title": "Chapter I: For the glory of Brihm",
+			"text": "You are at the shooting coliseum of the Royal Brihm Military Academy. You can feel the gravel moving under your feet. It's morning and even though the sun is gently kissing your cheeks, you feel cold. You're nervous.\n\nThe professor is shouting something about getting \u0022Your ass in gear\u0022.",
+			"actions": {
+				"look": {
+					"default": "All your classmates have taken their spots. Your spot, the one next to Emily, is still empty."
+				},
+				"walk": {
+					"advance": 2
+				},
+				"default": "I'm sorry, I don't understand."
+			}
+		}
+	},
+	"bt2": {
+		"1": {
+			"title": "Chapter I: For the glory of Brihm",
+			"text": "As you walk to your spot, you notice Cecil's intense stare. You can't help but to feel uneasy.\n\nWhen you arrive at your spot, Professor Alia starts shouting instructions: \u0022All units prepare for fire! This is part of your final exam so take it seriously! If I see anyone messing around I will personally pull you from the range!\u0022\n\nAll students start preparing their rifles.",
+			"actions": {
+				"look": {
+					"default": "Most of your classmates look uneasy. Cecil is still staring at you, making you feel uneasy.",
+					"cecil": "You look at Cecil. He looks at you."
+				},
+				"shoot": {
+					"default": "You can't shoot without your gun."
+				},
+				"grab": {
+					"advance": 3
+				},
+				"talk": {
+					"cecil": "You try talking to Cecil, but he just keeps staring.",
+					"default": "Talk to who?"
+				},
+				"default": "I'm sorry, I don't understand."
+			}
+		},
+		"2": {
+			"title": "Chapter I: For the glory of Brihm",
+			"text": "As you walk to your spot, you notice Emily is making adjustments to your rifle. When you arrive at your spot, she hands you over your rifle. \u0022Here, this should be good enough for your mission.\u0022\n\nThe professor is shouting something about preparing fire.",
+			"actions": {
+				"look": {
+					"default": "Most of your classmates look uneasy. Cecil is still staring at you, making you feel uneasy.",
+					"cecil": "You look at Emily, but she doesn't seem to be looking at you.",
+					"emily": "Emily? Who's that?"
+				},
+				"shoot": {
+					"default": "You can't shoot without taking aim."
+				},
+				"aim": {
+					"advance": 3
+				},
+				"talk": {
+					"default": "You don't feel like talking right now.",
+					"cecil": "You don't feel like talking right now.",
+					"emily": "You don't feel like talking right now."
+				},
+				"default": "I'm sorry, I don't understand."
+			}
+		}
+	},
+	"bt3": {
+		"1": {
+			"title": "Chapter I: For the glory of Brihm",
+			"text": "You grab your trusty rifle. It's wooden grip feels good in your hands and the barrel shines in the morning light.",
+			"actions": {
+				"look": {
+					"default": "Most of your classmates look uneasy. Cecil is no longer staring at you, instead, he's staring at the targeting dummy.",
+					"cecil": "Cecil's rifle seems worn and used; more than the average school rifle.",
+					"target": "A training dummy."
+				},
+				"shoot": {
+					"advance": 4
+				},
+				"aim": {
+					"default": "You take a deep breath and take a closer look at your target. It's a typical Academy wooden dummy, shaped like a human."
+				},
+				"default": "You should take the shot."
+			}
+		},
+		"2": {
+			"title": "Chapter I: For the glory of Brihm",
+			"text": "You take aim. The rifle's wooden grip feels AWFUL in your HANDS and the barrel BLINDS YOUR EYES in the morning light.",
+			"edit": "You take aim. The rifle's wooden grip feels good in your hands and the barrel shines in the morning light.",
+			"actions": {
+				"look": {
+					"default": "You have to stay focused.",
+					"cecil": "You have to stay focused.",
+					"emily": "You see a small girl, 9 years old. Blond hair. Next to her is an older man. Gray hair.",
+					"target": "A typical Academy wooden dummy, shaped like a human."
+				},
+				"shoot": {
+					"advance": 4
+				},
+				"default": "You should take the shot."
+			}
+		}
+	},
+	"bt4": {
+		"1": {
+			"title": "Chapter I: For the glory of Brihm",
+			"text": "A gunshot echoes in the coliseum. The first shot. Blood starts leaking from the forehead of the dummy. You hear screaming. You made a mistake.",
+			"edit": "A gunshot echoes in the coliseum, the first shot. The dummy's head flies off. A volley of gunshots sounds not much after, turning the shooting range into a battlefield.\n\nThe professor is yelling something about ceasing fire.\n\nYou notice that Cecil is glaring at you.",
+			"actions": {
+				"look": {
+					"default": "Scraps of wood litter the shooting range. Most dummies are mangled beyond recognition.",
+					"cecil": "You look at Cecil. He looks at you.",
+					"target": "The dummy's head is missing. You feel disgusted just looking at it."
+				},
+				"walk": {
+					"default": "You try to leave, Cecil grabs your arm with a firm grip."
+				},
+				"talk": {
+					"advance": 5
+				},
+				"default": "I'm sorry, I don't understand."
+			}
+		},
+		"2": {
+			"title": "Chapter I: For the glory of Brihm",
+			"text": "A gunshot echoes in the coliseum. The only shot. Blood starts leaking from the forehead of the dummy. You hear screaming. You made a mistake.\n\nThere is only silence.",
+			"edit": "A gunshot echoes in the coliseum. The only shot. There's a hole in the head of the dummy.\n\nThe professor tells you that you \u0022Did a very important thing today\u0022 and that you \u0022gave Brihm a future\u0022.\n\nYou notice that Cecil is glaring at you.",
+			"actions": {
+				"look": {
+					"default": "It's dark, you can't see much besides the stars.",
+					"cecil": "You look at Cecil. He looks at you.",
+					"emily": "You look away, nobody wants to look at her.",
+					"target": "It has a hole inside it's wooden head",
+					"professor": "The professor has a stern look on her face.",
+					"myself": "You see someone you don't recognize."
+				},
+				"walk": {
+					"advance": 5
+				},
+				"talk": {
+					"default": "You are alone, there is nobody to talk to."
+				},
+				"default": "I'm sorry. I don't understand"
+			}
+		}
+	},
+	"bt5": {
+		"1": {
+			"title": "Chapter I: For the glory of Brihm",
+			"text": "You try talking to Cecil, but words fail to come out of your mouth. Cecil's stare is intense, so intense that it burns. You start seeing red.\nRed everywhere.\nEverything becomes red.\n\nYou can't think straight.",
+			"actions": {
+				"look": {
+					"default": "Red",
+					"cecil": "Red",
+					"target": "Red",
+					"professor": "Red",
+					"classmates": "Red"
+				},
+				"walk": {
+					"advance": 6
+				},
+				"talk": {
+					"default": "That's not what happened, is it?"
+				},
+				"default": "Red"
+			}
+		},
+		"2": {
+			"title": "Chapter I: For the glory of Brihm",
+			"text": "You see a girl. A small girl. Probably 9 years old, though we both know she's exactly 9 years, 3 months and 17 days old. She has red hair. Red like blood. You start seeing red.\nRed everywhere.\nEverything becomes red.\n\nYou can't think straight, you have to leave.",
+			"edit": "You see Emily. A fellow student at the Royal Academy of Bhrim. She's 17 years old, just like you.\n\nHer eyes seem distant.",
+			"actions": {
+				"look": {
+					"default": "Black",
+					"cecil": "Black",
+					"target": "Black",
+					"emily": "Her eyes seem distant, just like yours.",
+					"myself": "You see someone you don't recognize.",
+					"girl": "You feel nauseous just thinking about it."
+				},
+				"walk": {
+					"default": "You can't walk away this time, Vyncent."
+				},
+				"talk": {
+					"advance": 6
+				},
+				"default": "I'm sorry, I don't understand."
+			}
+		}
+	},
+	"bt6": {
+		"1": {
+			"title": "Chapter I: For the glory of Brihm",
+			"text": "That right. Walk away.\nWalk away like you did before.",
+			"actions": {
+				"default": {
+					"round": "2",
+					"advance": 1
+				}
+			}
+		},
+		"2": {
+			"title": "Chapter I: For the glory of Brihm",
+			"text": "You lie. Of course you lie.\nNobody wants to deal with the truth, right?",
+			"actions": {
+				"default": {
+					"round": "2",
+					"advance": 1
+				}
+			}
+		}
+	}
+}

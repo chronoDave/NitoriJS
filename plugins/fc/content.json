@@ -1,0 +1,296 @@
+{
+	"garuda": {
+		"type": "trial",
+		"tag": "arr",
+		"name": "Garuda",
+		"instance": "\uD83C\uDF2A\uFE0F The Howling Eye (Extreme)",
+		"color": "green"
+	},
+	"titan": {
+		"type": "trial",
+		"tag": "arr",
+		"name": "Titan",
+		"instance": "\uD83D\uDCAA The Navel (Extreme)",
+		"color": "yellow"
+	},
+	"ifrit": {
+		"type": "trial",
+		"tag": "arr",
+		"name": "Ifrit",
+		"instance": "\uD83D\uDD25 The Bowl of Embers (Extreme)",
+		"color": "red"
+	},
+	"levi": {
+		"type": "trial",
+		"tag": "arr",
+		"name": "Leviathan",
+		"instance": "\uD83C\uDF0A The Whorleater (Extreme)",
+		"color": "blue"
+	},
+	"ramuh": {
+		"type": "trial",
+		"tag": "arr",
+		"name": "Ramuh",
+		"instance": "\u26A1 The Striking Tree (Extreme)",
+		"color": "purple"
+	},
+	"shiva": {
+		"type": "trial",
+		"tag": "arr",
+		"name": "Shiva",
+		"instance": "\u2744\uFE0F Akh Afah Amphitheatre (Extreme)",
+		"color": "blue"
+	},
+	"bismarck": {
+		"type": "trial",
+		"tag": "hw",
+		"name": "Bismarck",
+		"instance": "\uD83C\uDF27\uFE0F The Limitless Blue (Extreme)",
+		"color": "white"
+	},
+	"ravana": {
+		"type": "trial",
+		"tag": "hw",
+		"name": "Ravana",
+		"instance": "\u2694\uFE0F Thok ast Thok (Extreme)",
+		"color": "red"
+	},
+	"thordan": {
+		"type": "trial",
+		"tag": "hw",
+		"name": "King Thordan",
+		"instance": "\uD83D\uDC51 The Minstrel's Ballad: Thordan's Reign",
+		"color": "white"
+	},
+	"nidhogg": {
+		"type": "trial",
+		"tag": "hw",
+		"name": "Nidhogg",
+		"instance": "\uD83D\uDC09 The Minstrel's Ballad: Nidhogg's Rage",
+		"color": "black"
+	},
+	"sephi": {
+		"type": "trial",
+		"tag": "hw",
+		"name": "Sephirot",
+		"instance": "\uD83C\uDF3F Containment Bay S1T7 (Extreme)",
+		"color": "green"
+	},
+	"sophia": {
+		"type": "trial",
+		"tag": "hw",
+		"name": "Sophia",
+		"instance": "\uD83C\uDFAD Containment Bay P1T6 (Extreme)",
+		"color": "teal"
+	},
+	"zurvan": {
+		"type": "trial",
+		"tag": "hw",
+		"name": "Zurvan",
+		"instance": "\uD83C\uDF21\uFE0F Containment Bay Z1T9 (Extreme)",
+		"color": "red"
+	},
+	"lakshmi": {
+		"type": "trial",
+		"tag": "sb",
+		"name": "Lakshmi",
+		"instance": "\uD83D\uDCAE Emanation (Extreme)",
+		"color": "pink"
+	},
+	"susano": {
+		"type": "trial",
+		"tag": "sb",
+		"name": "Susano",
+		"instance": "\uD83D\uDC22 The Pool of Tribute (Extreme)",
+		"color": "red"
+	},
+	"shinryu": {
+		"type": "trial",
+		"tag": "sb",
+		"name": "Shinryu",
+		"instance": "\uD83D\uDC32 The Minstrel's Ballad: Shinryu's Domain",
+		"color": "green"
+	},
+	"byakko": {
+		"type": "trial",
+		"tag": "sb",
+		"name": "Byakko",
+		"instance": "\uD83D\uDC2F The Jade Stoa (Extreme)",
+		"color": "white"
+	},
+	"tsuyu": {
+		"type": "trial",
+		"tag": "sb",
+		"name": "Tsukuyomi",
+		"instance": "\uD83C\uDF18 The Minstrel's Ballad: Tsukuyomi's Pain",
+		"color": "purple"
+	},
+	"t6s": {
+		"type": "raid",
+		"tag": "coil",
+		"name": "Rafflesia",
+		"instance": "\uD83D\uDC32 [T6S] The Second Coil of Bahamut - Turn 1 (Savage)",
+		"color": "black"
+	},
+	"t7s": {
+		"type": "raid",
+		"tag": "coil",
+		"name": "Melusine",
+		"instance": "\uD83D\uDC32 [T7S] The Second Coil of Bahamut - Turn 2 (Savage)",
+		"color": "black"
+	},
+	"t8s": {
+		"type": "raid",
+		"tag": "coil",
+		"name": "The Avatar",
+		"instance": "\uD83D\uDC32 [T8S] The Second Coil of Bahamut - Turn 3 (Savage)",
+		"color": "black"
+	},
+	"t9s": {
+		"type": "raid",
+		"tag": "coil",
+		"name": "Nael deus Darnus",
+		"instance": "\uD83D\uDC32 [T9S] The Second Coil of Bahamut - Turn 4 (Savage)",
+		"color": "black"
+	},
+	"a1s": {
+		"type": "raid",
+		"tag": "alex",
+		"name": "Oppressor",
+		"instance": "\uD83E\uDD16 [A1S] Alexander - The Fist of the Father (Savage)",
+		"color": "white"
+	},
+	"a2s": {
+		"type": "raid",
+		"tag": "alex",
+		"name": "Gordian Goblins",
+		"instance": "\uD83E\uDD16 [A2S] Alexander - The Cuff of the Father (Savage)",
+		"color": "white"
+	},
+	"a3s": {
+		"type": "raid",
+		"tag": "alex",
+		"name": "Living Liquid",
+		"instance": "\uD83E\uDD16 [A3S] Alexander - The Arm of the Father (Savage)",
+		"color": "white"
+	},
+	"a4s": {
+		"type": "raid",
+		"tag": "alex",
+		"name": "Manipulator",
+		"instance": "\uD83E\uDD16 [A4S] Alexander - The Burden of the Father (Savage)",
+		"color": "white"
+	},
+	"a5s": {
+		"type": "raid",
+		"tag": "alex",
+		"name": "Ratfinx Twinkledinks",
+		"instance": "\uD83E\uDD16 [A5S] The Fist of the Son (Savage)",
+		"color": "white"
+	},
+	"a6s": {
+		"type": "raid",
+		"tag": "alex",
+		"name": "Blaster, Brawler, Swindler, Vortexer",
+		"instance": "\uD83E\uDD16 [A6S] The Cuff of the Son (Savage)",
+		"color": "white"
+	},
+	"a7s": {
+		"type": "raid",
+		"tag": "alex",
+		"name": "Quickthinx Allthoughts",
+		"instance": "\uD83E\uDD16 [A7S] The Arm of the Son (Savage)",
+		"color": "white"
+	},
+	"a8s": {
+		"type": "raid",
+		"tag": "alex",
+		"name": "Brute Justice",
+		"instance": "\uD83E\uDD16 [A8S] The Burden of the Son (Savage)",
+		"color": "white"
+	},
+	"a9s": {
+		"type": "raid",
+		"tag": "alex",
+		"name": "Refurbisher 0",
+		"instance": "\uD83E\uDD16 [A9S] The Eyes of the Creator (Savage)",
+		"color": "white"
+	},
+	"a10s": {
+		"type": "raid",
+		"tag": "alex",
+		"name": "Lamebrix Strikebocks",
+		"instance": "\uD83E\uDD16 [A10S] The Breath of the Creator (Savage)",
+		"color": "white"
+	},
+	"a11s": {
+		"type": "raid",
+		"tag": "alex",
+		"name": "Cruise Chaser",
+		"instance": "\uD83E\uDD16 [A11S] The Heart of the Creator (Savage)",
+		"color": "white"
+	},
+	"a12s": {
+		"type": "raid",
+		"tag": "alex",
+		"name": "Alexander Prime",
+		"instance": "\uD83E\uDD16 [A12S] The Soul of the Creator (Savage)",
+		"color": "white"
+	},
+	"o1s": {
+		"type": "raid",
+		"tag": "delta",
+		"name": "Alte Roite",
+		"instance": "\uD83D\uDDFA\uFE0F [O1S] Deltascape V1.0 (Savage)",
+		"color": "gray"
+	},
+	"o2s": {
+		"type": "raid",
+		"tag": "delta",
+		"name": "Catastrophe",
+		"instance": "\uD83D\uDDFA\uFE0F [O2S] Deltascape V2.0 (Savage)",
+		"color": "gray"
+	},
+	"o3s": {
+		"type": "raid",
+		"tag": "delta",
+		"name": "Halicarnassus",
+		"instance": "\uD83D\uDDFA\uFE0F [O3S] Deltascape V3.0 (Savage)",
+		"color": "gray"
+	},
+	"o4s": {
+		"type": "raid",
+		"tag": "delta",
+		"name": "Neo Exdeath",
+		"instance": "\uD83D\uDDFA\uFE0F [O4S] Deltascape V4.0 (Savage)",
+		"color": "gray"
+	},
+	"o5s": {
+		"type": "raid",
+		"tag": "sigma",
+		"name": "Phantom Train",
+		"instance": "\uD83D\uDDFA\uFE0F [O5S] Sigmascape V1.0 (Savage)",
+		"color": "gray"
+	},
+	"o6s": {
+		"type": "raid",
+		"tag": "sigma",
+		"name": "Chadarnook",
+		"instance": "\uD83D\uDDFA\uFE0F [O6S] Sigmascape V2.0 (Savage)",
+		"color": "gray"
+	},
+	"o7s": {
+		"type": "raid",
+		"tag": "sigma",
+		"name": "Guardian",
+		"instance": "\uD83D\uDDFA\uFE0F [O7S] Sigmascape V3.0 (Savage)",
+		"color": "gray"
+	},
+	"o8s": {
+		"type": "raid",
+		"tag": "sigma",
+		"name": "Kefka",
+		"instance": "\uD83D\uDDFA\uFE0F [O8S] Sigmascape V4.0 (Savage)",
+		"color": "gray"
+	}
+}
