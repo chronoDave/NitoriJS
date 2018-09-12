@@ -75,7 +75,7 @@ Nitori.on('message', async message => {
 		if (Settings.tokenClever == '') return; // No token? No Cleverbot
 		message.channel.startTyping();
 		NitoriClever.write(args.join(' '), function(response) {
-			if (truth) {
+			if (Aletheia.isTruth()) {
 				message.reply(Aletheia.send(response.output));
 			} else {
 				message.reply(response.output);

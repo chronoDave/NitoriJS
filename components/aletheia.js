@@ -26,4 +26,7 @@ module.exports = {
 		isTruth = false;
 		return 'Truth disabled';
 	}
+	isTruth: function() {
+		return isTruth;
+	}
 }
