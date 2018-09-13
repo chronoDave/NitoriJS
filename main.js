@@ -63,32 +63,35 @@ Nitori.on('message', async message => {
 	let messageArray = message.content.split(" ");
 	let command = messageArray[0];
 	args = messageArray.slice(1);
-	// Mention
-	if (message.isMentioned(Nitori.user.id)) {
-		// Help
-		if (args.length === 0) return message.reply(
-			`Me? I can give you a list of my tools if you type ` 
-			+ '`' + `${prefix}help` + '`'
-			+ `, if that's what you need?`
-		);
-		// Cleverbot
-		if (Settings.tokenClever == '') return; // No token? No Cleverbot
-		message.channel.startTyping();
-		NitoriClever.write(args.join(' '), function(response) {
-			if (Aletheia.isTruth()) {
-				message.reply(Aletheia.send(response.output));
-			} else {
-				message.reply(response.output);
-			}
-			message.channel.stopTyping();
-		});
-	}
 	// Listen to commands from here
 	Admin.prefix(message.channel, "get").then(response => {
 		if (response != false) prefix = response; // Check for custom prefixes	
+		// Mention or DM
+		if ((message.isMentioned(Nitori.user.id) || message.channel.type === "dm") && !command.startsWith(prefix)) {
+			// Help
+			if (args.length === 0 && command.match(/help/i)) return message.reply(
+				`Me? I can give you a list of my tools if you type ` 
+				+ '`' + `${prefix}help` + '`'
+				+ `, if that's what you need?`
+			);
+			// Cleverbot
+			if (Settings.tokenClever == '') return; // No token? No Cleverbot
+			message.channel.startTyping();
+			if (message.channel.type === "dm") {
+				NitoriClever.write(messageArray.join(' '), function(response) {
+					message.reply(Aletheia.send(response.output));
+					message.channel.stopTyping();
+				});
+			} else {
+				NitoriClever.write(args.join(' '), function(response) {
+					message.reply(Aletheia.send(response.output));
+					message.channel.stopTyping();
+				});
+			}
+			
+		}
 		if(!command.startsWith(prefix)) return; // Ignore non-commands
 		let noPrefix = command.slice(prefix.length);
-
 		switch (noPrefix) {
 			case 'help':
 				let embed = new Discord.RichEmbed();
