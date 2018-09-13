@@ -48,3 +48,13 @@ module.exports.run = async (bot, message, args, Aletheia) => {
     // Code
 }
 ```
+#### Using components
+NitoriJS currently features 4 components:
+- admin.js
+-- Used in the main file (main.js) where things such as profile picture or status changes can be made. Status changes are made via presence.js. Best to keep this file alone.
+- presence.js
+-- Sets status of the bot, best to keep this file alone.
+- help.js
+-- Extracts plugin information, best to keep this file alone.
+-  aletheia.js 
+-- Enables / disables the use of "garbled" text similar to the [Zalgo Text Generator by Tchouky](http://www.eeemo.net/). This can be called inside your plugin using the `Aletheia.send()` function. Enabling / disabling of Aletheia is done inside the main file, located inside the Admin component.
