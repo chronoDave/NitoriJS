@@ -1,4 +1,7 @@
 # NitoriJS
+
+Deprecated.
+
 An open-source Discord bot written in JavaScript using the discord.js library.
 
 NitoriJS is written in a modular fashion, so that adding extra functionality should be relatively simple.
