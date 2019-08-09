@@ -4,7 +4,7 @@ module.exports = {
   add: async Nitori => {
     try {
       // Add plugins here
-      // Nitori.set(plugin.info, plugin.run)
+      // Nitori.set(plugin.info.name, plugin.run)
     } catch (err) {
       console.error(err);
     }

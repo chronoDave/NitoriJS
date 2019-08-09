@@ -48,7 +48,7 @@ module.exports = {
 	...
     add: async Nitori => {
     	try {
-        	Nitori.set(admin.info, admin.run)
+        	Nitori.set(admin.info.name, admin.run)
         } catch (err) {
         	console.error(err);
         }
