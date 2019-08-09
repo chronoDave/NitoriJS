@@ -1,63 +1,79 @@
 # NitoriJS
 
-Deprecated.
+A modular Discord bot
 
-An open-source Discord bot written in JavaScript using the discord.js library.
+## Getting started
+#### Download
+<b>Full package: </b>
+Clone or download the repository in your favorite Git application.
 
-NitoriJS is written in a modular fashion, so that adding extra functionality should be relatively simple.
+<b>Minimal package: </b>
+Clone or download the `nitorijs-core` folder inside `packages`.
 
-To get an overview of NitoriJS' commands and functions, type `[prefix]help [component/plugin]`, or `[prefix]help [component/plugin] list` to get a full overview.
+#### Config
+- Create an `index.js` file inside `config` folder. This folder can be found inside `nitorijs-core` if you downloaded the full package.
+- Add your Discord bot token.
 
-**Using the help command currently does not work for components!**
-## Getting Started
-As NitoriJS runs on node, you'll need both node.js and npm to get started.
+#### Run
+Yarn
+
 ```
-download / clone repo
+yarn
+yarn start
+```
+
+Npm
+
+```
 npm install
+npm run start
 ```
-Before running NitoriJS, create a settings.json file inside the components folder
+
+## Adding plugins
+NitoriJS is written in a modular fashion, allowing you to customize NitoriJS to your liking.
+
+Add the following line to your `package.json` `dependencies` inside `nitorijs-core`:
+- For internal packages (full package only):
+	- `<package-name>: "./packages/<package-folder-name>"`
+	- Example: `@nitorijs/admin: "./packages/nitorijs-admin"`
+- For external packages:
+	- `<package-name>: "git://github.com/<user>/<repo>.git"`
+	- Example: `@nitorijs/admin: "git://github.com/chronoDave/NitoriJS/packages/nitorijs-admin.git"`
+
+Require the imported file inside your config file:
 ```
-// settings.json
-{
-	"token": "", // Your Discord bot token
-	"tokenClever": "", // Your CleverBot token (optional)
-	"prefix": "", // Prefix for your commands
-	"color": "", // Color used for embeds (Nitori's default color)
-	"owner": "", // ID of the owner of the bot, usually yourself
+const admin = require('@nitorijs/admin');
+
+module.exports = {
+	...
+    add: async Nitori => {
+    	try {
+        	Nitori.set(admin.info, admin.run)
+        } catch (err) {
+        	console.error(err);
+        }
+    }
 }
 ```
-After that, simply run the bot
+
+## Creating plugins
+NitoriJS plugins only require two things:
+- An info export with a `name` property
+- A run export
+
+NitoriJS exposes the client (the bot, NitoriJS), message and args function on the run export.
+
 ```
-node main.js
-```
-## Components / plugins
-NitoriJS works on a component / plugin system. Components are necessary and cannot be removed, but can be added, whilst plugins can both be added and removed.
-#### Adding plugins
-For NitoriJS to detect plugins, all plugins must have a main .js file located in the plugins folder.
-#### Creating plugins
-For plugins, use the following template
-```
-// Metadata (gets used by the help component)
 module.exports.info = {
-	name: "", // Name of plugin
-	description: "", // Small description of what it does
-	args: "", // Arguments it takes
-	examples: "", // Some examples
-	list: "" // A full list of all arguments
-};
-// Event listener
-// bot is the bot object, message is the message object, args are the arguments and Aletheia is the text modifier.
-module.exports.run = async (bot, message, args, Aletheia) => {
-    // Code
+	name: 'admin'
+}
+
+module.exports.run = (bot, message, args) => {
+	// Do code stuff
+    // message.reply(args)
 }
 ```
-#### Using components
-NitoriJS currently features 4 components:
-- admin.js
--- Used in the main file (main.js) where things such as profile picture or status changes can be made. Status changes are made via presence.js. Best to keep this file alone.
-- presence.js
--- Sets status of the bot, best to keep this file alone.
-- help.js
--- Extracts plugin information, best to keep this file alone.
--  aletheia.js 
--- Enables / disables the use of "garbled" text similar to the [Zalgo Text Generator by Tchouky](http://www.eeemo.net/). This can be called inside your plugin using the `Aletheia.send()` function. Enabling / disabling of Aletheia is done inside the main file, located inside the Admin component.
+
+## License
+
+This project is licensed under the [Gnu General Public License](https://github.com/chronoDave/Doombox/blob/master/LICENSE).

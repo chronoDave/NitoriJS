@@ -1,0 +1,27 @@
+{
+  "name": "@nitorijs/core",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Chronocide",
+  "description": "A modular Discord bot",
+  "keywords": [
+    "discord",
+    "bot",
+    "discordjs",
+    "modular"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chronoDave/NitoriJS.git",
+    "directory": "packages/nitorijs-core"
+  },
+  "license": "GNU General Public License",
+  "homepage": "https://www.chronostudios.net",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}

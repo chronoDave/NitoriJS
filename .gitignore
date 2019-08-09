@@ -1,14 +1,2 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Database
-*.sqlite
-
-# NodeJS
-node_modules/
-jspm_packages/
-
-# NitoriJS
-components/settings.json
-components/settings.json
+node_modules
+packages/nitorijs-core/src/config/index.js

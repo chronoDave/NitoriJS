@@ -1,18 +1,16 @@
 {
-  "name": "nitorijs",
-  "version": "0.2.1",
-  "description": "Chrono's Discord bot",
-  "main": "main.js",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "start": "cd ./packages/nitorijs-core && yarn start"
   },
-  "author": "Chronocide",
-  "license": "ISC",
-  "dependencies": {
-    "cleverbot-node": "^0.3.11",
-    "discord.js": "^11.4.2",
-    "droll": "^0.2.1",
-    "sequelize": "^4.38.0",
-    "sqlite3": "^4.0.2"
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2"
   }
 }
