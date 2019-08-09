@@ -37,43 +37,36 @@ Nitori.on('message', async message => {
 
   // Nitori
   if (message.isMentioned(Nitori.user.id) || message.channel.type === 'dm') {
-    let response;
-
     if (args.length === 0) {
-      if (Nitori.plugins.size === 0) {
-        response = 'My commands? I don\'t seem to have any loaded right now...';
-      } else {
-        response = `My commands? Sure, here you go:\n${Nitori.plugins.keyArray().join('\n')}`;
-      }
+      if (Nitori.plugins.size === 0) return message.reply('My commands? I don\'t seem to have any loaded right now...');
+
+      const response = `My commands? Sure, here you go: \n\`\`\` - ${Nitori.plugins.keyArray().join('\n - ')}\`\`\`\n You can use these commands with the prefix: \`${serverPrefix}\``;
+      return message.reply(response);
     }
 
     if (args[0] === 'prefix') {
-      if (!args[1]) {
-        response = `I'm currently using \`${serverPrefix}\` as prefix.`;
-      } else {
-        await Nitori.database.prefix.update(guildId, args[1]);
+      if (!args[1]) return message.reply(`I'm currently using \`${serverPrefix}\` as prefix.`);
 
-        const server = await Nitori.database.prefix.get(guildId);
-        Nitori.prefix.set(guildId, server.prefix); // Update cache
+      await Nitori.database.prefix.update(guildId, args[1]);
 
-        response = `Updated prefix to: \`${server.prefix}\``;
-      }
+      const server = await Nitori.database.prefix.get(guildId);
+      Nitori.prefix.set(guildId, server.prefix); // Update cache
+
+      return message.reply(`Updated prefix to: \`${server.prefix}\``);
     }
 
-    return message.reply(response);
+    // Execute mention-based plugins
+    const plugins = Nitori.plugins.filter(plugin => plugin.mention);
+    plugins.keyArray().forEach(key => Nitori.plugins.get(key).run(Nitori, config, message, args));
   }
 
-  // Commands
+  // Plugins
   const command = messageArray[0];
-
-  if (!command.includes(serverPrefix)) return null; // Ignore regular messages
-
   const cleanCommand = command.slice(serverPrefix.length);
   const plugin = Nitori.plugins.get(cleanCommand);
 
-  if (plugin) return plugin(Nitori, config, message, args);
-
-  return null;
+  if (!command.includes(serverPrefix) || !plugin) return null; // Ignore regular messages
+  return plugin.run(Nitori, config, message, args);
 });
 
 Nitori.login(config.discordToken);
