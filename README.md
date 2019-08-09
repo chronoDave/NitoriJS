@@ -3,18 +3,18 @@
 A modular Discord bot
 
 ## Getting started
-#### Download
+### Download
 <b>Full package: </b>
 Clone or download the repository in your favorite Git application.
 
 <b>Minimal package: </b>
 Clone or download the `nitorijs-core` folder inside `packages`.
 
-#### Config
+### Config
 - Create an `index.js` file inside `config` folder. This folder can be found inside `nitorijs-core` if you downloaded the full package.
 - Add your Discord bot token.
 
-#### Run
+### Run
 Yarn
 
 ```
