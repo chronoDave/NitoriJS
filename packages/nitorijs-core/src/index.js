@@ -53,10 +53,10 @@ Nitori.on('message', async message => {
       } else {
         await Nitori.database.prefix.update(guildId, args[1]);
 
-        const newPrefix = Nitori.prefix.get(guildId);
-        Nitori.prefix.set(guildId, newPrefix); // Update cache
+        const server = await Nitori.database.prefix.get(guildId);
+        Nitori.prefix.set(guildId, server.prefix); // Update cache
 
-        response = `Updated prefix to: \`${newPrefix}\``;
+        response = `Updated prefix to: \`${server.prefix}\``;
       }
     }
 
