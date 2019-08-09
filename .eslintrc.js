@@ -10,6 +10,7 @@ module.exports = {
     "linebreak-style": "off",
     "arrow-parens": ["error", "as-needed"],
     "no-console": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "camelcase": "off"
   }
 }

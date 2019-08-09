@@ -1,12 +1,11 @@
 const Discord = require('discord.js');
-
-// Plugins
 const config = require('./config');
+const Database = require('./database');
 
 const Nitori = new Discord.Client({ disableEveryone: true });
-
 Nitori.plugins = new Discord.Collection();
-Nitori.servers = new Discord.Collection();
+Nitori.prefix = new Discord.Collection(); // Prefix cache
+Nitori.database = Database.create();
 
 Nitori.on('ready', async () => {
   console.log('Booting NitoriJS...');
@@ -16,27 +15,27 @@ Nitori.on('ready', async () => {
   console.log('Discord successfully initialized, Nitori ready for duty!');
 });
 
-Nitori.on('message', message => {
+Nitori.on('message', async message => {
   const { content, author } = message;
   const guildId = message.guild.id;
 
   if (author.bot) return null; // Ignore bots
 
-  // Server
-  if (!Nitori.servers.has(guildId)) {
-    Nitori.servers.set(guildId, config.prefix); // Default prefix
-  }
-  const serverPrefix = Nitori.servers.get(guildId);
-
-  // Commands
+  // Message
   const messageArray = content.split(' ');
-  const command = messageArray[0];
-
-  if (!command.includes(serverPrefix)) return null; // Ignore regular messages
-
-  const cleanCommand = command.slice(serverPrefix.length);
   const args = messageArray.splice(1);
 
+  // Prefix
+  if (!Nitori.prefix.get(guildId)) {
+    let server = await Nitori.database.prefix.get(guildId);
+
+    if (!server) server = await Nitori.database.prefix.set(guildId, config.prefix);
+
+    Nitori.prefix.set(guildId, server.prefix); // Cache prefix
+  }
+  const serverPrefix = Nitori.prefix.get(guildId);
+
+  // Nitori
   if (message.isMentioned(Nitori.user.id) || message.channel.type === 'dm') {
     let response;
 
@@ -48,10 +47,30 @@ Nitori.on('message', message => {
       }
     }
 
+    if (args[0] === 'prefix') {
+      if (!args[1]) {
+        response = `I'm currently using \`${serverPrefix}\` as prefix.`;
+      } else {
+        await Nitori.database.prefix.update(guildId, args[1]);
+
+        const newPrefix = Nitori.prefix.get(guildId);
+        Nitori.prefix.set(guildId, newPrefix); // Update cache
+
+        response = `Updated prefix to: \`${newPrefix}\``;
+      }
+    }
+
     return message.reply(response);
   }
 
+  // Commands
+  const command = messageArray[0];
+
+  if (!command.includes(serverPrefix)) return null; // Ignore regular messages
+
+  const cleanCommand = command.slice(serverPrefix.length);
   const plugin = Nitori.plugins.get(cleanCommand);
+
   if (plugin) return plugin(Nitori, message, args);
 
   return null;

@@ -1,2 +1,3 @@
 node_modules
 packages/nitorijs-core/src/config/index.js
+database.sqlite
