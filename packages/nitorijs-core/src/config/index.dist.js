@@ -1,5 +1,6 @@
 module.exports = {
   discordToken: '<DISCORD_TOKEN>',
+  owner: '<USER_TOKEN>',
   prefix: '/',
   add: async Nitori => {
     try {

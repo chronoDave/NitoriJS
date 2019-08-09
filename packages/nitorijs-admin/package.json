@@ -1,0 +1,27 @@
+{
+  "name": "@nitorijs/admin",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Chronocide",
+  "description": "NitoriJS admin plugin",
+  "keywords": [
+    "discord",
+    "bot",
+    "discordjs",
+    "modular",
+    "admin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chronoDave/NitoriJS.git",
+    "directory": "packages/nitorijs-admin"
+  },
+  "license": "GNU General Public License",
+  "homepage": "https://www.chronostudios.net",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

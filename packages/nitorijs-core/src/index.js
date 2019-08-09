@@ -71,7 +71,7 @@ Nitori.on('message', async message => {
   const cleanCommand = command.slice(serverPrefix.length);
   const plugin = Nitori.plugins.get(cleanCommand);
 
-  if (plugin) return plugin(Nitori, message, args);
+  if (plugin) return plugin(Nitori, config, message, args);
 
   return null;
 });
