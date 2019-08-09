@@ -48,7 +48,7 @@ module.exports = {
 	...
     add: async Nitori => {
     	try {
-        	Nitori.set(admin.info.name, admin.run)
+        	Nitori.set(admin.info.name, { run: admin.run })
         } catch (err) {
         	console.error(err);
         }
@@ -61,7 +61,7 @@ NitoriJS plugins only require two things:
 - An info export with a `name` property
 - A run export
 
-NitoriJS exposes the client (the bot, NitoriJS), message and args function on the run export.
+NitoriJS exposes the client (the bot, NitoriJS), config, message and args function on the run export.
 
 ```
 module.exports.info = {
@@ -73,6 +73,23 @@ module.exports.run = (bot, message, args) => {
     // message.reply(args)
 }
 ```
+
+You can hook into mentions by adding the `mention` property in the core config file.
+
+```
+module.exports = {
+	...
+    add: async Nitori => {
+    	try {
+        	Nitori.set(admin.info.name, { run: admin.run, mention: true })
+        } catch (err) {
+        	console.error(err);
+        }
+    }
+}
+```
+
+Do keep in mind that all plugins with the mention property will be executed on mention.
 
 ## License
 

@@ -38,11 +38,13 @@ const database = async (bot, command, cs) => {
 };
 
 module.exports.run = async (bot, config, message, args) => {
-  message.channel.startTyping();
+  message.channel.stopTyping();
+
   const cs = await database(bot, 'get');
   if (!cs) await database(bot, 'create');
 
   get(`https://www.cleverbot.com/getreply?key=${config.cleverToken}&input=${args.join(' ')}&cs=${cs}`, res => {
+    message.channel.startTyping();
     if (res.statusCode !== 200) {
       message.channel.stopTyping();
       message.reply('...');
