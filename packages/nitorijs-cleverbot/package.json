@@ -24,6 +24,6 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "sequelize": "^5.13.0"
+    "sequelize": "^5.15.1"
   }
 }
