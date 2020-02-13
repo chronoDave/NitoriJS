@@ -16,4 +16,4 @@ yarn start
 
 ## License
 
-This project is licensed under the MIT license.
+This project is licensed under the [MIT License](LICENSE).
