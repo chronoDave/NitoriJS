@@ -11,7 +11,7 @@ const {
 
 module.exports.info = {
   name: TYPE.PLUGIN.HELP,
-  description: 'Maho\'s help plugin',
+  description: REPLY.DESCRIPTION.HELP,
   fields: [{
     name: '<empty>',
     value: 'Display all loaded plugins'

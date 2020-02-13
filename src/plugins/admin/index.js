@@ -9,7 +9,7 @@ const {
 
 module.exports.info = {
   name: TYPE.PLUGIN.ADMIN,
-  description: 'These are my personal settings, leave me alone!',
+  description: REPLY.DESCRIPTION.ADMIN,
   fields: [{
     name: 'avatar [url]',
     value: 'Change my avatar'

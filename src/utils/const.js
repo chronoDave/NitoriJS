@@ -151,13 +151,13 @@ const TYPE = {
     FULL: ['ADMINISTRATOR']
   },
   COLLECTION: {
-    GUILD: 'guild',
-    CLEVER: 'clever'
+    GUILD: 'guild'
   },
   PLUGIN: {
     ADMIN: 'admin',
     MBALL: 'mball',
-    HELP: 'help'
+    HELP: 'help',
+    DROLL: 'roll'
   },
   ACTION: {
     LIST: 'list',
@@ -226,6 +226,12 @@ const STATUS = [{
 }];
 
 const REPLY = {
+  DESCRIPTION: {
+    HELP: 'Maho\'s help plugin',
+    ADMIN: 'These are my personal settings, leave me alone!',
+    MBALL: '8-ball plugin, inspired by Zach\'s text adventures',
+    DROLL: 'Roll dice using common dice notation: https://en.wikipedia.org/wiki/Dice_notation'
+  },
   GENERAL: {
     NO_INPUT: 'I\'m sorry, what?',
     PREFIX: prefix => `I'm using the prefix \`${prefix}\` for this server`
@@ -237,6 +243,11 @@ const REPLY = {
   },
   ADMIN: {
     INVALID: 'And who do you think you are?'
+  },
+  DROLL: {
+    NO_INPUT: 'How many dice do you wish to roll?',
+    INVALID: 'Please use the common dice notation: https://en.wikipedia.org/wiki/Dice_notation',
+    INVALID_NUM: 'I can\'t roll that many dice!'
   },
   TRUTH: bool => `Truth ${bool ? 'enabled' : 'disabled'}`,
   AVATAR: {

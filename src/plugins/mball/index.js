@@ -1,6 +1,12 @@
 // Utils
-const { getRandomMinMax } = require('../../utils');
-const { TYPE } = require('../../utils/const');
+const {
+  getRandomMinMax,
+  markupCode
+} = require('../../utils');
+const {
+  REPLY,
+  TYPE
+} = require('../../utils/const');
 
 const wisdom = [
   'It is certain',
@@ -27,7 +33,7 @@ const wisdom = [
 
 module.exports.info = {
   name: TYPE.PLUGIN.MBALL,
-  description: '8-ball plugin, inspired by Zach\'s text adventures',
+  description: REPLY.DESCRIPTION.MBALL,
   fields: [{
     name: '[question]',
     value: 'Answers your question'
@@ -37,6 +43,6 @@ module.exports.info = {
 module.exports.route = ({ event, input }) => {
   if (input.length === 0) return event.channel.send(`:8ball: \`${wisdom[14]}\``);
   return event.channel.send(
-    `:8ball: \`${wisdom[getRandomMinMax(0, wisdom.length - 1)]}\``
+    `:8ball: ${markupCode(wisdom[getRandomMinMax(0, wisdom.length - 1)])}`
   );
 };

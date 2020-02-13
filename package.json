@@ -11,14 +11,15 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
+    "cross-env": "^7.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
-    "nodemon": "^2.0.2",
-    "cross-env": "^7.0.0"
+    "nodemon": "^2.0.2"
   },
   "dependencies": {
     "discord.js": "^11.5.1",
+    "droll": "^0.2.1",
     "nedb": "^1.8.0"
   }
 }
