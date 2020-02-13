@@ -38,7 +38,7 @@ module.exports = async props => {
   });
 
   event.channel.startTyping();
-  get(url, response => {
+  return get(url, response => {
     if (response.statusCode !== 200) {
       event.reply('...');
       event.channel.stopTyping(true);

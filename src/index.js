@@ -64,7 +64,7 @@ client.on('ready', async () => {
 });
 
 client.on('message', async event => {
-  if (event.author.bot) return; // Ignore bots
+  if (event.author.bot) return; // Ignore bots and self
   mainRouter({ event, client, config });
 });
 

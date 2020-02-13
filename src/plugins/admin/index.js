@@ -31,6 +31,7 @@ module.exports.route = props => {
     case TYPE.ACTION.GUILD: return controller.guild(routeProps);
     case TYPE.ACTION.STATUS: return controller.status(routeProps);
     case TYPE.ACTION.USERNAME: return controller.username(routeProps);
+    case TYPE.ACTION.TRUTH: return controller.truth(routeProps);
     default: return event.reply(REPLY.GENERAL.NO_INPUT);
   }
 };

@@ -2,7 +2,11 @@
 const { getGuild } = require('../utils');
 
 module.exports = async props => {
-  const { event, client, config } = props;
+  const {
+    event,
+    client,
+    config
+  } = props;
 
   const guild = await getGuild(
     client.cache,

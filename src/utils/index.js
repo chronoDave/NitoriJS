@@ -1,5 +1,8 @@
 // Utils
-const { TYPE } = require('./const');
+const {
+  TYPE,
+  MODIFIERS
+} = require('./const');
 
 const markup = {
   block: text => `\`\`\`${text}\`\`\``,
@@ -30,9 +33,26 @@ const getMembers = (input, event) => Promise.all(input
 
 const getRandomMinMax = (min, max) => Math.round(Math.random() * (max - min) + min);
 
+const getTruth = input => {
+  let truth = '';
+
+  for (let i = 0; i < input.length; i += 1) {
+    truth += input.substr(i, 1);
+
+    const loopCount = Math.floor(2 + Math.random() * 31);
+    for (let j = 0; j < loopCount; j += 1) {
+      const modIndex = Math.floor(Math.random() * MODIFIERS.length);
+      truth += MODIFIERS[modIndex];
+    }
+  }
+
+  return truth;
+};
+
 module.exports = {
   markup,
   getMembers,
   getGuild,
-  getRandomMinMax
+  getRandomMinMax,
+  getTruth
 };

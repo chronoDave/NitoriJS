@@ -8,13 +8,19 @@ const categoryRouter = require('./category.router');
 const newsRouter = require('./news.router');
 const storeRouter = require('./store.router');
 
+// Utils
+const {
+  getGuild,
+  getTruth
+} = require('../utils');
+
 /**
  * @param {Object} props
  * @param {Object} props.event
  * @param {Object} props.client
  * @param {Object} props.config
  */
-module.exports = props => {
+module.exports = async props => {
   switch (props.event.channel.type) {
     case 'dm':
       dmRouter(props);
@@ -23,8 +29,27 @@ module.exports = props => {
       groupRouter(props);
       break;
     case 'text': {
+      // Inject truth
+      const guild = await getGuild(
+        props.client.cache,
+        props.event.channel.guild.id,
+        {
+          name: props.event.channel.guild.name,
+          prefix: props.config.prefix
+        }
+      );
+
       if (props.event.isMentioned(props.client.user.id)) {
-        pingRouter(props);
+        pingRouter({
+          ...props,
+          event: {
+            ...props.event,
+            reply: (input, options) => props.event.reply(
+              guild.truth ? getTruth(input) : input,
+              options
+            )
+          }
+        });
       } else {
         pluginRouter(props);
       }

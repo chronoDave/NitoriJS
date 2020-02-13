@@ -13,6 +13,20 @@ const guildController = require('./guild.controller');
 const { getRandomMinMax } = require('../../utils');
 
 module.exports = {
+  truth: async ({ client, event }) => {
+    const guild = await client.cache.readOne(
+      TYPE.COLLECTION.GUILD,
+      event.channel.guild.id
+    );
+
+    const newGuild = await client.cache.updateOne(
+      TYPE.COLLECTION.GUILD,
+      event.channel.guild.id,
+      { $set: { truth: !guild.truth } }
+    );
+
+    event.reply(REPLY.TRUTH(newGuild.truth));
+  },
   username: ({ input, client, event }) => {
     let response = null;
 
