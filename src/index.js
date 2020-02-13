@@ -35,6 +35,9 @@ client.on('ready', async () => {
 
   // Load plugins
   Object.values(plugins).forEach(plugin => {
+    if (!plugin.info) console.error(`Invalid metadata plugin: ${JSON.stringify(plugin.info)}`);
+    if (!plugin.route || typeof plugin.route !== 'function') console.error(`Invalid run function: ${JSON.stringify(plugin.route)}`);
+
     client.plugins.set(plugin.info.name, {
       route: plugin.route
     });

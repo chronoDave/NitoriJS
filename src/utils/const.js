@@ -142,7 +142,8 @@ const TYPE = {
     CLEVER: 'clever'
   },
   PLUGIN: {
-    ADMIN: 'admin'
+    ADMIN: 'admin',
+    MBALL: 'mball'
   },
   ACTION: {
     INFO: 'info',

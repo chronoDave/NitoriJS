@@ -4,11 +4,6 @@ const {
   MODIFIERS
 } = require('./const');
 
-const markup = {
-  block: text => `\`\`\`${text}\`\`\``,
-  code: text => `\`${text}\``
-};
-
 const getGuild = async (db, id, payload) => {
   let guild = await db.readOne(TYPE.COLLECTION.GUILD, id);
 
@@ -50,7 +45,6 @@ const getTruth = input => {
 };
 
 module.exports = {
-  markup,
   getMembers,
   getGuild,
   getRandomMinMax,
