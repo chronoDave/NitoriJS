@@ -1,4 +1,7 @@
 const TYPE = {
+  URL: {
+    CLEVER: ({ token, input, session }) => `https://www.cleverbot.com/getreply?key=${token}&input=${input}&cs=${session}`
+  },
   PERMISSION: {
     MINIMAL: [
       'READ_MESSAGES',
@@ -19,7 +22,8 @@ const TYPE = {
     FULL: ['ADMINISTRATOR']
   },
   COLLECTION: {
-    GUILD: 'guild'
+    GUILD: 'guild',
+    CLEVER: 'clever'
   },
   PLUGIN: {
     ADMIN: 'admin'
@@ -90,7 +94,8 @@ const STATUS = [{
 
 const REPLY = {
   GENERAL: {
-    NO_INPUT: 'I\'m sorry, what?'
+    NO_INPUT: 'I\'m sorry, what?',
+    PREFIX: prefix => `I'm using the prefix \`${prefix}\` for this server`
   },
   ADMIN: {
     INVALID: 'And who do you think you are?'

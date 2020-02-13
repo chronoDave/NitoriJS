@@ -1,6 +1,19 @@
+// Utils
+const { TYPE } = require('./const');
+
 const markup = {
   block: text => `\`\`\`${text}\`\`\``,
   code: text => `\`${text}\``
+};
+
+const getGuild = async (db, id, payload) => {
+  let guild = await db.readOne(TYPE.COLLECTION.GUILD, id);
+
+  if (!guild) {
+    guild = await db.create(TYPE.COLLECTION.GUILD, { _id: id, ...payload });
+  }
+
+  return Promise.resolve(guild);
 };
 
 const getMembers = (input, event) => Promise.all(input
@@ -20,5 +33,6 @@ const getRandomMinMax = (min, max) => Math.round(Math.random() * (max - min) + m
 module.exports = {
   markup,
   getMembers,
+  getGuild,
   getRandomMinMax
 };

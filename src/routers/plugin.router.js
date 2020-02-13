@@ -1,15 +1,5 @@
 // Utils
-const { TYPE } = require('../utils/const');
-
-const getGuild = async (db, id, payload) => {
-  let guild = await db.readOne(TYPE.COLLECTION.GUILD, id);
-
-  if (!guild) {
-    guild = await db.create(TYPE.COLLECTION.GUILD, { _id: id, ...payload });
-  }
-
-  return Promise.resolve(guild);
-};
+const { getGuild } = require('../utils');
 
 module.exports = async props => {
   const { event, client, config } = props;
