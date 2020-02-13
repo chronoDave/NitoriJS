@@ -26,7 +26,12 @@ const wisdom = [
 ];
 
 module.exports.info = {
-  name: TYPE.PLUGIN.MBALL
+  name: TYPE.PLUGIN.MBALL,
+  description: '8-ball plugin, inspired by Zach\'s text adventures',
+  fields: [{
+    name: '[question]',
+    value: 'Answers your question'
+  }]
 };
 
 module.exports.route = ({ event, input }) => {

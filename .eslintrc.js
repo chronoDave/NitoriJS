@@ -20,6 +20,7 @@ module.exports = {
     'indent': 'off',
     'prefer-template': 'off', // String formatting
     'no-underscore-dangle': 'off', // NeDB _id
+    'no-console': 'off', // It's a server
     // Import
     'import/namespace': ['error', { 'allowComputed': true }],
     'import/prefer-default-export': 'off'

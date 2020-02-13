@@ -118,6 +118,19 @@ const TYPE = {
   URL: {
     CLEVER: ({ token, input, session }) => `https://www.cleverbot.com/getreply?key=${token}&input=${input}&cs=${session}`
   },
+  COLOR: {
+    TEAL: '#1abc9c',
+    GREEN: '#2ecc71',
+    BLUE: '#3498db',
+    PURPLE: '#9b59db',
+    PINK: '#e91e63',
+    YELLOW: '#f1c40f',
+    ORANGE: '#e67e22',
+    RED: '#e74c3c',
+    GRAY: '#95a5a6',
+    WHITE: '#eff6f7',
+    BLACK: '#1e2223'
+  },
   PERMISSION: {
     MINIMAL: [
       'READ_MESSAGES',
@@ -143,9 +156,11 @@ const TYPE = {
   },
   PLUGIN: {
     ADMIN: 'admin',
-    MBALL: 'mball'
+    MBALL: 'mball',
+    HELP: 'help'
   },
   ACTION: {
+    LIST: 'list',
     INFO: 'info',
     AVATAR: 'avatar',
     USERNAME: 'username',
@@ -214,6 +229,11 @@ const REPLY = {
   GENERAL: {
     NO_INPUT: 'I\'m sorry, what?',
     PREFIX: prefix => `I'm using the prefix \`${prefix}\` for this server`
+  },
+  HELP: {
+    LIST: (plugins, help) => `These are the plugins I have loaded: ${plugins}\nType ${help} for more information about that plugin`,
+    INVALID: help => `I'm sorry, I don't have that plugin available. For a list of plugins, type ${help}`,
+    PLUGIN: (description, plugin) => `**${description}**\nList of all possible commands for the plugin ${plugin}:`
   },
   ADMIN: {
     INVALID: 'And who do you think you are?'

@@ -44,9 +44,17 @@ const getTruth = input => {
   return truth;
 };
 
+const getColor = color => parseInt(`${color.replace('#', '0x')}`, 16);
+
+const markupBlock = input => `\`\`\`${input}\`\`\``;
+const markupCode = input => `\`${input}\``;
+
 module.exports = {
   getMembers,
   getGuild,
   getRandomMinMax,
-  getTruth
+  getTruth,
+  getColor,
+  markupBlock,
+  markupCode
 };

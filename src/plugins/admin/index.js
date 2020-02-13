@@ -8,7 +8,36 @@ const {
 } = require('../../utils/const');
 
 module.exports.info = {
-  name: TYPE.PLUGIN.ADMIN
+  name: TYPE.PLUGIN.ADMIN,
+  description: 'These are my personal settings, leave me alone!',
+  fields: [{
+    name: 'avatar [url]',
+    value: 'Change my avatar'
+  }, {
+    name: 'username [name]+',
+    value: 'Change my name'
+  }, {
+    name: 'truth',
+    value: 'Toggle truth'
+  }, {
+    name: 'status',
+    value: 'I\'ll start doing something randomly'
+  }, {
+    name: 'status [activity] [status]',
+    value: 'I\'ll start doing whatever you\'ll tell me to'
+  }, {
+    name: 'guild',
+    value: 'Display all guilds I\'m part of'
+  }, {
+    name: 'guild [id]',
+    value: 'Display guild information'
+  }, {
+    name: 'guild [id] prefix [prefix]',
+    value: 'Set a new prefix for the specified guild'
+  }, {
+    name: 'guild [id] leave',
+    value: 'I\'ll leave that specific guild'
+  }]
 };
 
 module.exports.route = props => {

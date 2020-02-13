@@ -39,6 +39,7 @@ client.on('ready', async () => {
     if (!plugin.route || typeof plugin.route !== 'function') console.error(`Invalid run function: ${JSON.stringify(plugin.route)}`);
 
     client.plugins.set(plugin.info.name, {
+      ...plugin.info,
       route: plugin.route
     });
     console.log(` - Added plugin: ${plugin.info.name}`);
