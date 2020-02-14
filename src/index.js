@@ -29,6 +29,7 @@ const client = new Client({
 });
 client.cache = new NeDB(TYPE.COLLECTION.GUILD, '.');
 client.plugins = new Collection();
+client.persistent = new Collection();
 
 client.on('ready', async () => {
   console.log('Booting up MahoBot...');

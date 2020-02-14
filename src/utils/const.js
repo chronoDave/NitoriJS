@@ -157,7 +157,8 @@ const TYPE = {
     ADMIN: 'admin',
     MBALL: 'mball',
     HELP: 'help',
-    DROLL: 'roll'
+    DROLL: 'roll',
+    CFTA: 'cfta'
   },
   ACTION: {
     LIST: 'list',
@@ -230,7 +231,8 @@ const REPLY = {
     HELP: 'Maho\'s help plugin',
     ADMIN: 'These are my personal settings, leave me alone!',
     MBALL: '8-ball plugin, inspired by Zach\'s text adventures',
-    DROLL: 'Roll dice using common dice notation: https://en.wikipedia.org/wiki/Dice_notation'
+    DROLL: 'Roll dice using common dice notation: https://en.wikipedia.org/wiki/Dice_notation',
+    CTFA: 'An old-school text adventure where you type to advance the game. The game features branching storylines; what the game tells you to do might not be the correct action! I highly suggest playing this game in a private channel, server, or DM, as you will probably need to scroll back on some occasions'
   },
   GENERAL: {
     NO_INPUT: 'I\'m sorry, what?',
