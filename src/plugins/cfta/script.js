@@ -46,7 +46,7 @@ module.exports = [
       talk: {
         cecil: 'You try talking to Cecil but he just keeps staring.',
         student: 'You try talking to Cecil but he just keeps staring.',
-        professor: 'The professor is too far away and you really don\'t want to shoot',
+        professor: 'The professor is too far away and you really don\'t want to shout',
         emily: 'Who\'s Emily?',
         default: 'Talk to who?'
       },
